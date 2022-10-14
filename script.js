@@ -68,6 +68,16 @@ function changeVolume(e) {
   }
   volumeBar.style.width = `${volume * 100}%`
   video.volume = volume;
+  // change icon depending on volume
+  volumeIcon.className = '';
+  if (volume > 0.5) {
+    volumeIcon.classList.add('fas', 'fa-volume-up');
+  } else if (volume > 0) {
+    volumeIcon.classList.add('fas', 'fa-volume-down');
+  } else {
+    volumeIcon.classList.add('fas', 'fa-volume-off');
+  }
+  lastVolume = volume;
 }
 
 
